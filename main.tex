@@ -1,0 +1,174 @@
+\documentclass[a4paper,english,11pt]{article}
+% \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{listing}
+\usepackage{adjustbox}
+\usepackage{indentfirst}
+\usepackage[most]{tcolorbox}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+%\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage[bookmarks,hyperfootnotes=false,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,pagecolor=black,anchorcolor=black,breaklinks=true]{hyperref}% Hiperenlaces
+
+\usepackage{graphicx}
+\usepackage{fixme}
+\usepackage{lscape}
+\usepackage{movie15}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.png,.pdf,}
+
+% Párrafos
+\setlength{\parskip}{8pt}
+
+\begin{document}
+	
+	\renewcommand*{\thepage}{\roman{page}}
+	\newcommand{\IoT}{\textbf{IoT} }
+	
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{0,5cm} 
+			{\Large \textsc{Universidad Internacional Méndez Pelayo\\}}
+			\vspace{3mm}
+			{\huge \textbf{Resolución de problemas con metaheurísticos}} \\
+			\vspace{1,7cm}
+			{\Large \textsc{Testing security Internet of Thing\\}}
+			
+		\end{center}
+		\vspace{12.3cm}
+		\begin{table}[!h]
+			\Large
+			\begin{tabular}{rl}
+				\textbf{Author}: & Antonio José Checa Bustos\\
+				
+			\end{tabular}
+		\end{table}
+		% \vspace{1,5cm} \\
+		% \begin{flushright}
+		% {\large \today}
+		% \end{flushright}
+	\end{titlepage}
+	
+	
+	
+	
+	\newpage
+	\thispagestyle{empty}
+	\renewcommand{\contentsname}{Contents}
+	\renewcommand{\refname}{References}
+	\tableofcontents
+	\newpage
+	
+	\pagestyle{fancy}
+	\fancyhead[L]{Testing security IoT}
+	% \fancyhead[R]{Antonio José Checa Bustos}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\sectionmark}[1]{\markboth{\textbf{\thesection. #1}}{}}
+	\renewcommand*{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	
+	\section{Introduction}
+	\label{sec:intro}
+	\input{intro.tex}	
+	
+	\newpage
+	
+	\section{Articles}
+	\label{sec:articulos}
+	\input{articulos.tex}	
+	
+	\newpage
+	
+	\section{Companies}
+	\label{sec:empresas}
+	\input{empresas.tex}
+	
+	\newpage
+	
+	\section{PenTesting}
+	\label{sec:pentesting}
+	\input{pentesting.tex}
+	
+	\newpage
+	
+	\section{IoT classification}
+	\label{sec:iot}
+	\input{iot.tex}
+	
+	\newpage
+	
+	\section{Conclusion}
+	\label{sec:artcomp}
+	\input{artcom.tex}
+	
+	\newpage
+	
+	\bibliographystyle{ieeetr}	
+	\begin{thebibliography}{9}	
+		
+		\bibitem{Paper0}
+		Craigen, D., Diakun-Thibault, N., \& Purse, R. (2014). Defining cybersecurity. Technology Innovation Management Review, 4(10).
+		
+		\bibitem{Paper}
+		Amoroso, E. 2006. Cyber Security. New Jersey: Silicon Press.
+		
+		\bibitem{IoT1}
+		S. Haller S. Karnouskos and C. Schroth "The Internet of Things in an Enterprise Context " in Future Internet-FIS 2008 Lecture Notes in Computer Science Vol. 5468 2009 pp 14-28.
+		
+		\bibitem{IoT2}
+		A. C. Sarma and J. Girão "Identities in the Future Internet of Things " in Wireless Personal Communications 49.3 2009 pp. 353-363.
+		
+		\bibitem{IoT3}
+		Roberto Minerva Abiy Biru "Towards a Definition of the Internet of Things " IEEE IoT Initiative white paper.
+		
+		\bibitem{Paper1} 		
+		Jonathan Charity Talwana, Huang Jian Hua, \href{http://ieeexplore.ieee.org/document/7917092/}{Smart World of Internet of Things (IoT) and Its Security Concerns} (15-18 Dec. 2016) 4 May 2017
+		
+		\bibitem{Data1}
+		Gubbi, J., Buyya, R., Marusic, S., \& Palaniswami, M. (2013). Internet of Things (IoT): A vision, architectural elements, and future directions. Future generation computer systems, 29(7), 1645-1660.
+		
+		\bibitem{Paper2} 
+		Eike Steffen Reetz, Daniel Kuemper, Klaus Moessner, \href{http://ieeexplore.ieee.org/document/6582811/}{How to Test IoT-based Services before Deploying them into Real World} (16-18 April 2013) Online - 20 August 2013
+		
+		\bibitem{Paper3} 
+		Pablo Gimenez, Benjamin Molina, Carlos E. Palau, \href{http://ieeexplore.ieee.org/document/6721820/}{SWE Simulation and Testing for the IoT} (13-16 Octubre 2013) 27 Enero 2014
+		
+		\bibitem{Paper8}
+		Lake, D., Milito, R., Morrow, M., \& Vargheese, R. (2014). Internet of things: Architectural framework for ehealth security. Journal of ICT Standardization, River Publishing, 1.
+		
+		\bibitem{Presentation1}
+		Miessler, D. (2015). IoT Attack Surface Mapping.
+		
+		\bibitem{Paper4} 
+		Erik Jan Marinissen, Yervant Zorian, Mario Konijnenburg, \href{http://ieeexplore.ieee.org/document/7519331/}{IoT: Source of test challenges} (23-27 Mayo 2016) 25 Julio 2016
+		
+		\bibitem{Paper5} 
+		Umar Ahsan, Abdul Bais, \href{http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7815042&tag=1}{A Review on Big Data Analysis and Internet of Things} (10-13 Octubre 2016) Publicado el 16 de Enero 2017
+		
+		\bibitem{Paper6} 
+		Salvador Pérez, Juan A. Martínez, Antonio F. Skarmeta, Márcio Mateus, Bruno Almeida, Pedro Maló, \href{http://ieeexplore.ieee.org/document/7845504/}{ARMOUR: Large-scale experiments for IoT security \& trust}
+		(12-14 Dec. 2016) publicado el 9 de febrero 2017
+		
+		\bibitem{Paper7} 
+		Ruth M. Ogunnaike; Brent Lagesse, \href{http://ieeexplore.ieee.org/document/7917633/}{Toward consumer-friendly security in smart environments}, (13-17 March 2017), 4 May 2017
+		
+		\bibitem{ethicalHacking}
+		Saleem, S. A. (2006, September). Ethical hacking as a risk management technique. In Proceedings of the 3rd annual conference on Information security curriculum development (pp. 201-203). ACM.
+		
+		\bibitem{Hacking1}
+	    Julia Allen, Alan Christie, William Fithen, John ?McHugh, Jed Pickel, Ed Stoner. (2000). "State of the Practice of Intrusion Detection Technologies". http://www.sei.cmu.edu/publications/documents/99.reports/99tr028/99tr028title.html.
+	    
+	    \bibitem{Hacking2}
+        "NSA Glossary of Terms Used in Security and Intrusion Detection". http://www.sans.org/newlook/resources/glossary.htm.
+        
+        \bibitem{Hacking3}
+         Michael Gregg, Certified Ethical Hacker
+	\end{thebibliography}
+	
+\end{document}

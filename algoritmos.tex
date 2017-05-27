@@ -1,0 +1,106 @@
+%Algoritmos
+
+Antes de explicar los diferentes algoritmos implementados, se anotará el sistema que se ha decidido para probar la solución.
+
+Se han creado veinte diferentes problemas de p-mediana, cada uno con una solución óptima. La estructura del archivo es la siguiente:
+La primera fila tiene tres valores separados por espacios. 
+El primer valor indica el número de localizaciones, 
+el segundo valor indica el número de iteraciones k que tendrá nuestro algoritmo BVNS y 
+el último valor indica el número valores que tendrá nuestro subconjunto $S$.\\
+
+Luego tendrá $n$ filas, siendo n el número de localizaciones, cada una con $n$ columnas, separadas por espacios, indicando el coste entre una localización y otra.\\
+
+Por tanto, el archivo, para el ejemplo mostrado en la sección anterior, quedará de la siguiente forma:
+\begin{center}
+\begin{tcolorbox}[colback=green!10,colframe=green!40!black,title=Fichero de ejemplo, center title, text width = 40mm]
+		8 8 2\\
+		0 18 32 12 26 7 25 34\\
+		18 0 15 6 9 11 19 17\\
+		32 15 0 20 6 25 20 12\\
+		12 6 20 0 14 5 13 22\\
+		26 9 6 14 0 19 14 8\\
+		7 11 25 5 19 0 18 27\\
+		25 19 20 13 14 18 0 20\\
+		34 17 12 22 8 27 20 0
+\end{tcolorbox}
+\end{center}
+
+Para resolver el problema de la p-mediana se ha decidido por implementar un algoritmo básico de búsqueda por entornos variables(BVNS) y una lista tabú aplicada al algoritmo BVNS. También se ha estudiado el sistema multiarranque para estos dos algoritmos y diferentes métodos de calcular los vecinos.\\
+
+\subsection{BVNS (Basic Variable Neighborhood Search)}
+El algoritmo básico de búsqueda por entorno variable se ha implementado de la siguiente forma: \\
+
+Los valores a escoger para la primera solución propuesta por el algoritmo se escogen de forma pseudo-aleatoria, ya que se realiza con un sistema determinista.\\
+
+Una vez obtenida el punto de partida, se calcula a los vecinos y se realiza una búsqueda local por ellos, para obtener el mejor vecino. Después se compara si el vecino es mejor que nuestra solución actual, si no lo es, se continúa k iteraciones. Si por el contrario, algún vecino mejora nuestra solución, se cambia y se vuelve a partir desde el principio, pero con la nueva solución.\\
+
+\subsubsection{Cálculo de vecinos}
+Para el cálculo de vecinos se ha implementado un sistema variable, que puede ser configurado al principio de la ejecución.
+
+Por defecto se cambiará el diez por ciento del subconjunto $S$ por otros números aleatorios. \\
+
+Las variables configurables es el número de porcentaje y si es un porcentaje o no. De esta forma si configuramos el valor 10, pero le decimos que no es porcentaje, modificará siempre 10 valores del subconjunto $S$, o el máximo si $p$ es menor que 10.
+
+\subsubsection{Búsqueda local}
+La búsqueda local se calcula recorriendo el subconjunto $S$ sustituyendo cada valor por el nuevo y buscando cual es la mejor solución con este cambio. Se realiza de esta forma para todos los nuevos valores, yendo de uno en uno.
+
+\subsubsection{Ejemplo}
+Para el ejemplo puesto anteriormente:
+
+\begin{center}
+	\begin{tabular}{|c||c|c|c|c|c|c|c|c|} \hline
+		\multicolumn{9}{|c|}{Coste de transporte} \\ \hline
+		   & P1 & P2 & P3 & P4 & P5 & P6 & P7 & P8\\ \hline \hline
+		P1 & 0  & 18 & 32 & 12 & 26 & 7  & 25 & 34\\ \hline
+		P2 & 18 & 0  & 15 & 6  & 9  & 11 & 19 & 17\\ \hline
+		P3 & 32 & 15 & 0  & 20 & 6  & 25 & 20 & 12\\ \hline
+		P4 & 12 & 6  & 20 & 0  & 14 & 5  & 13 & 22\\ \hline
+		P5 & 26 & 9  & 6  & 14 & 0  & 19 & 14 & 8\\ \hline
+		P6 & 7  & 11 & 25 & 5  & 19 & 0  & 18 & 27\\ \hline
+		P7 & 25 & 19 & 20 & 13 & 14 & 18 & 0  & 20\\ \hline
+		P8 & 34 & 17 & 12 & 22 & 8  & 27 & 20 & 0\\ \hline
+	\end{tabular}
+\end{center}
+
+Los pasos a seguir serían:
+
+\begin{adjustbox}{max width=\textwidth}
+\begin{lstlisting}
+Se lee el fichero y se recolectan todos los datos.
+Se prepara el sistema, inicializando la semilla. 
+Se calcula que el 10% (por defecto) del numero de localizaciones, 
+	para este caso, es uno.
+Se piden los dos primeros numeros aleatorios, por ejemplo, 3 y 5.
+Se calcula el coste del transporte para estas dos localizaciones. (90)
+Se inicializa el contador a 0.
+Se comprueba que el contador no es mayor o igual a k,
+	en nuestro ejemplo. (8)
+Se pide el siguiente numero aleatorio, por ejemplo, 8.
+Se busca el mejor vecino:\\
+	Se sustituye el primer numero de las localizaciones por 8, 
+		en este caso 3.
+	Se calcula el coste de transporte para las localizaciones. 
+		[5, 8] (88)
+	Se vuelve a sustituir por el siguiente numero en el vector.
+	Se calcula el nuevo coste de transporte para el vector. 
+		[3, 8] (118)
+	Se devuelve el vector con menor coste de transporte. 
+		[5, 8]
+Se comprueba si el coste de transporte es menor que el actual.
+Si es asi, se cambia el vector y se vuelve a inicializar el contador a 0.
+En caso contrario se sumaria uno al contador y volveriamos al punto 7.
+\end{lstlisting}
+\end{adjustbox}
+
+\subsection{Búsqueda Tabú}
+La búsqueda tabú se ha implementado sobre bvns. Se añade una lista para saber todos los valores que se han comprobado y no repetirlos. Se tiene especial cuidado en que no se llegue al máximo de valores permitidos, ya que se quedaría en un bucle infinito.
+
+Si algún valor es repetido se vuelve a hacer  un cálculo de vecinos para buscar un nuevo valor.
+
+El cálculo de vecinos se realiza de la misma forma que en la búsqueda por entornos variable.
+
+\subsection{Multiarranque}
+
+Se ha implementado el código de forma que se pueda realizar varias búsquedas empezando por la solución encontrada anteriormente, este multiarranque se realiza tanto, para la búsqueda por entornos variables como para la búsqueda tabú.
+
+Se puede configurar en el código el número de veces que se vuelve a empezar. Pero si ponemos un número demasiado alto, puede ser que estemos llegando a un sistema de fuerza bruta en vez de un sistema metaheurístico.

@@ -1,0 +1,80 @@
+%Comparación
+
+Para probar la implementación se han realizado las pruebas con 21 problemas diferentes. Todos se han realizado con las mismas k iteraciones en la solución, tanto para BVNS como para la búsqueda tabú. También se ha realizado un multiarranque para ambas implementaciones. Se ha hecho con un procesador i7 3770k y ocho gigas de RAM DDR3 2400MHz. Se ha utilizado para cada test una semilla diferente, siendo el tiempo en el que se ejecutó.
+
+\subsection{Bvns y Tabú}
+
+Primero se muestra una tabla con el tiempo y la distancia de cada algoritmo tras la primera iteración por él. Se puede comprobar que dan resultados diferentes.
+\begin{center}
+	\begin{adjustbox}{max width=\textwidth}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+		\multicolumn{9}{|c|}{Algoritmo básico} \\ \hline
+		\multicolumn{4}{|c|}{Test}& \multicolumn{2}{c}{BVNS} & \multicolumn{2}{|c|}{Tabu} & Optimal \\ \hline
+		   & Loc & k    & p   & Distancia& Time     & Distancia& Time     & Distancia \\ \hline
+		0  & 8   & 8    & 2   & 49       & 0.02     & 49       & 0.279    & 49        \\ \hline
+		1  & 100 & 200  & 5   & 5897 	 & 0.816    & 5879     & 0.876    & 5819      \\ \hline
+		2  & 100 & 200  & 10  & 4147 	 & 2.865    & 4199     & 4.802    & 4093      \\ \hline
+		3  & 100 & 400  & 10  & 4314 	 & 7.233    & 4377     & 4.154    & 4250      \\ \hline
+		4  & 100 & 400  & 20  & 3132 	 & 19.207   & 3093     & 25.669   & 3034      \\ \hline
+		5  & 100 & 400  & 33  & 1414 	 & 47.734   & 1383     & 40.936   & 1355      \\ \hline
+		6  & 100 & 800  & 5   & 7937 	 & 2.177    & 8145     & 2.286    & 7824      \\ \hline
+		7  & 100 & 800  & 10  & 5721 	 & 10.66    & 5716     & 7.279    & 5631      \\ \hline
+		8  & 100 & 800  & 20  & 4677 	 & 53.952   & 4712     & 36.712   & 4445      \\ \hline
+		9  & 100 & 800  & 40  & 2914	 & 105.024  & 2812     & 212.588  & 2734      \\ \hline
+		10 & 100 & 800  & 67  & 1313	 & 746.812  & 1326     & 445.101  & 1255      \\ \hline
+		11 & 100 & 1000 & 5   & 7707	 & 3.54     & 7758     & 6.469    & 7696      \\ \hline
+		12 & 100 & 1000 & 10  & 6974	 & 16.341   & 6952     & 9.892    & 6634      \\ \hline
+		13 & 100 & 1000 & 30  & 4671	 & 136.817  & 4671     & 122.096  & 4374      \\ \hline
+		14 & 100 & 1000 & 60  & 3206	 & 536.626  & 3150     & 408.496  & 2968      \\ \hline
+		15 & 100 & 1000 & 100 & 1825	 & 1633.28  & 1824     & 3021.06  & 1729      \\ \hline
+		16 & 100 & 1500 & 5   & 8642	 & 3.342    & 8273     & 3.907    & 8162      \\ \hline
+		17 & 100 & 1500 & 10  & 7250	 & 18.007   & 7226     & 15.967   & 6999      \\ \hline
+		18 & 100 & 1500 & 40  & 5098	 & 291.74   & 5024     & 381.184  & 4809      \\ \hline
+		19 & 100 & 1500 & 80  & 2984	 & 2737.41  & 3014     & 2120.28  & 2845      \\ \hline
+		20 & 100 & 1500 & 133 & 1957	 & 4400.13  & 1869     & 8906.9   & 1789      \\ \hline
+	\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\subsection{Multi-arranque}
+Ahora se muestra la opción de multi-arranque activada para los algoritmos de BVNS y Tabú. Se ha puesto 5 multi-arranque, es decir, el algoritmo realiza 5 veces BVNS y Tabú, guardando la mejor solución y la lista tabú.
+\begin{center}
+	\begin{adjustbox}{max width=\textwidth}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+		\multicolumn{9}{|c|}{Multiarranque} \\ \hline
+		\multicolumn{4}{|c|}{Test}& \multicolumn{2}{c}{BVNS} & \multicolumn{2}{|c|}{Tabu} & Optimal \\ \hline
+		   & Loc & k    & p   & Distancia& Time    & Distancia& Time    & Distancia \\ \hline
+		0  & 8   & 8    & 2   & 49       & 0.107   & 49       & 1.474   & 49        \\ \hline
+		1  & 100 & 200  & 5   & 5856     & 5.298   & 5821     & 3.375   & 5819      \\ \hline
+		2  & 100 & 200  & 10  & 4179     & 11.242  & 4100     & 12.883  & 4093      \\ \hline
+		3  & 100 & 400  & 10  & 4263     & 12.87   & 4253     & 14.449  & 4250      \\ \hline
+		4  & 100 & 400  & 20  & 3096     & 45.634  & 3090     & 46.153  & 3034      \\ \hline
+		5  & 100 & 400  & 33  & 1388     & 123.211 & 1397     & 137.351 & 1355      \\ \hline
+		6  & 100 & 800  & 5   & 7952     & 6.627   & 7824     & 8.847   & 7824      \\ \hline
+		7  & 100 & 800  & 10  & 5733     & 35.235  & 5686     & 25.748  & 5631      \\ \hline
+		8  & 100 & 800  & 20  & 4573     & 124.869 & 4580     & 82.899  & 4445      \\ \hline
+		9  & 100 & 800  & 40  & 2756     & 487.588 & 2820     & 404.066 & 2734      \\ \hline
+		10 & 100 & 800  & 67  & 1286     & 1389.05 & 1294     & 1321.32 & 1255      \\ \hline
+		11 & 100 & 1000 & 5   & 7717     & 17.836  & 7729     & 14.077  & 7696      \\ \hline
+		12 & 100 & 1000 & 10  & 6738     & 46.83   & 6706     & 49.597  & 6634      \\ \hline
+		13 & 100 & 1000 & 30  & 4490     & 419.684 & 4500     & 359.094 & 4374      \\ \hline
+		14 & 100 & 1000 & 60  & 3066     & 1552.06 & 3093     & 1547.07 & 2968      \\ \hline
+		15 & 100 & 1000 & 100 & 1810     & 4258.07 & 1792     & 4581.94 & 1729      \\ \hline
+		16 & 100 & 1500 & 5   & 8231     & 17.193  & 8167     & 17.878  & 8162      \\ \hline
+		17 & 100 & 1500 & 10  & 7072     & 53.163  & 7212     & 62.246  & 6999      \\ \hline
+		18 & 100 & 1500 & 40  & 4936     & 852.673 & 4926     & 1054.72 & 4809      \\ \hline
+		19 & 100 & 1500 & 80  & 2990     & 3026.11 & 2947     & 4205.12 & 2845      \\ \hline
+		20 & 100 & 1500 & 133 & 1871     & 12962.7 & 1858     & 12506.3 & 1789      \\ \hline
+	\end{tabular}
+\end{adjustbox}
+\end{center}
+
+Se puede comprobar que con el sistema de multiarranque la mejora es sustancial, aunque el tiempo se incrementa bastante. Se puede observar también, que el tiempo no se incrementa por cinco, ya que, aunque se realiza cinco iteraciones, como se tiene una solución aceptable, es lógico que el algoritmo no reinicie k, tantas veces como la primera.
+
+\newpage
+
+\subsection{Gráficas}
+Se ha realizado una gráfica, que muestra el tiempo consumido por cada algoritmo, para cada test.\\
+\includegraphics[width=\hsize]{time.pdf} \\
+También se ha realizado una gráfica que muestra la diferencia entre el coste conseguido y coste óptimo.\\
+\includegraphics[width=\hsize]{coste.pdf} \\
