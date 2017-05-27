@@ -2,13 +2,13 @@
 
 \subsection{Resumen de los diferentes Artículos encontrados}
 
-\textbf{How to Test IoT-based Services before Deploying them into Real World}\cite{Paper2}\\
+\subsubsection{How to Test IoT-based Services before Deploying them into Real World}\cite{Paper2}
 This paper describes  a  new  approach  for  testing  IoT-based  service  build on  a  code  insertion  methodology,  which  can  be  derived  from the semantic description of the IoT-based service.
 The proposed IoT resource emulation interface is described from the semantic, architectural  and  implementation  perspective.  The  paper  compares its applicability and efficiency with classical approaches and expose  high  emulation  capabilities  while  minimising  the  testing effort.
 They propose a semiautomated process of test code insertion in order to support fast prototyping with test integration of large-scale IoT-based services, in other words, they propose a code insertion methodology, because \IoT is so heterogenous there is very difficult to test every device with one code.
 The paper describes an example how a stream X-Machine model can be derived from service interface descriptions based on on-tologies and rules.
 
-\textbf{SWE Simulation and Testing for the \IoT}\cite{Paper3}\\
+\subsubsection{SWE Simulation and Testing for the \IoT}\cite{Paper3}
 This paper presents the use of a high level sensor simulator and sensor web standards applied to an indoor industrial environment, in order to target worker's safety. In order to achieve this goal they developed a simulator representing multiple types and number of sensors and integrate it with a standard sensor database known as Sensor Observation Service (SOS). In addition to that, they develop a Human Computer Interface (HMI) to monitor all sensors and also a Control Center application to test one of the risks within the factory (collision detection).\\
 The Wireless Sensor Network, SOS and Control center are communicated by network. Also, they have sensor emulator that may coexist in the environment. The HMI (Human Computer Interface) is responsible for offering a web monitoring platform, as will be described later.\\
 The simulator replaces an individual or a group of sensors, and the key communication component at application level is the interaction with the SOS. \\
@@ -16,14 +16,36 @@ The simulator is configured through an XML file that includes a list of all sens
 The simulator presented in the paper is able to generate realistic and real time data from both mobile and fixed sensors, sending all measurements to a Sensor Observation Service (SOS) which aggregates all sensor data as a unified entity. \\
 We can learn from this simulator to emulate some different device and test \IoT.\\
 
-\textbf{Internet of Things: Architectural Framework	for eHealth Security}\cite{Paper8}\\
+\subsubsection{Internet of Things (IoT): A vision, architectural elements, and future directions}\cite{Paper9}
+Cambiar lo de abajo!!!!!!\\
+This paper presents the current trends in IoT research propelled by applications and the need for convergence in several interdisciplinary technologies. Specifically, in Section 2, we present the overall IoT vision and the technologies that will achieve it followed by some common definitions in the area along with some trends and taxonomy of IoT in Section 3. We discuss several application domains in IoT with a new approach in defining them in Section 4 and Section 5 provides our Cloud centric IoT vision. A case study of data analytics on the Aneka/Azure cloud platform is given in Section 6 and we conclude with discussions on open challenges and future trends in Section 7.\\
+Presented here is a user-centric cloud based model for approaching this goal through the interaction of private and public clouds. In this manner, the needs of the end-user are brought to the fore. Allowing for the necessary flexibility to meet the diverse and sometimes competing needs of different sectors, we propose a framework enabled by a scalable cloud to provide the capacity to utilize the IoT. The framework allows networking, computation, storage and visualization themes separate thereby allowing independent growth in every sector but complementing each other in a shared environment. The standardization which is underway in each of these themes will not be adversely affected with Cloud at its center. In proposing the new framework associated challenges have been highlighted ranging from appropriate interpretation and visualization of the vast amounts of data, through to the privacy, security and data management issues that must underpin such a platform in order for it to be genuinely viable. The consolidation of international initiatives is quite clearly accelerating progress towards an IoT, providing an overarching view for the integration and functional elements that can deliver an operational IoT.
+
+\subsubsection{Internet of Things: Architectural Framework	for eHealth Security}\cite{Paper8}
 The Internet of Things (IoT) holds big promises for Health Care, especially in Proactive Personal eHealth.\\
 Define eHealth a partir de varias fuentes ya que no es un termino consensuado.
 The World Health Organization [WHO] defines e-Health as:\\
 ``E-health is the transfer of health resources and health care by electronic means''
+Propone una arquitectura y los beneficios de unir ambos mundos. Explica cuales son los problemas de seguridad haciendo hincapie en que un dispositivo IoT no es un dispositivo seguro. Se para especificamente en cada punto crítico:
+\begin{enumerate}
+	\item Security in the IoT landscape
+	\item Endpoint device security
+	\item Network security
+	\item Cloud-based application access security
+	\item Data storge security
+	\item Enterprise application access security
+	\item Federated secure access to partner cloud service
+\end{enumerate}
+Al final dicen que la edad de eHealth está relacionada con un deployment seguro. Si siguen la propuesta explicada detalladamente en cada uno de sus puntos, se podra llevar a cabo.
 
+\subsubsection{Testing protocols in Internet of Things by a formal passive technique}\cite{Paper11}
+Cambiar!!!!!\\
+In this work, we first define a formalism to specify conformance and performance requirements of XMPP
+represented as formulas tested on real protocol traces. And then, since several protocol requirements need to be tested on different wireless entities, we design a distributed framework for testing our approach on runtime wireless network execution traces.\\
+A brief description of the syntax and semantics used to describe the tested properties is presented. The framework has been implemented. It has been performed through a real framework to test XMPP properties. The distributed architecture allows to assess our approach efficiently.\\
+This paper introduces a formal approach to passively test distributed conformance and performance requirements of IoT protocol implementation. Our approach allows to define the conformance and performance properties that are evaluated on real protocol traces. The evaluation of the property returns a Pass, Fail, or Inconclusive result derived from the given trace. To verify and test the approach, we design several XMPP properties to be evaluated by our approach. Our methodology has been implemented into a distributed framework which provides the possibility to test individual nodes of a complex network environment. The results from testing several properties on large traces have been obtained with success. Consequently, building a standardized performance testing benchmark system for XMPP protocol would be the work we will focus on in future. In that case, the efficiency and processing capacity of the system when massive subtesters are performed through complex network situations would be the crucial point we need to handle.
 
-\textbf{IoT Attack Surface Mapping}\cite{Presentation1}\\
+\subsubsection{IoT Attack Surface Mapping}\cite{Presentation1}
 Esta presentación habla sobre los diferentes ataques que se pueden realizar a los dipositivos IoT.
 Explica cuales son las diferentes areas en las que se puede atacar cualquier dispositivo, no solo IoT y algunas de sus vulnerabilidades de las que hablaremos en la sección \ref{sec:pentesting}
 IoT attack surface areas:
@@ -46,7 +68,13 @@ IoT attack surface areas:
 	\item Network Traffic
 \end{itemize}
 
-\textbf{IoT: Source of test challenges}\cite{Paper4}\\
+\subsection{Internet of things laboratory test bed.}\cite{Paper12}
+The article describes the structure and composition of the laboratory test bench and partially—laboratory equipment for testing and prototyping.\\
+The stand consists of three segments: data collection, local positioning, and data storage and processing.\\
+A brief description of approaches to testing of wireless sensor networks based on technology ZigBee: Testing IEEE 802.15.4 (PHY/MAC Layer), testing the recovery wireless sensor networks, network testing for interaction with public communication networks.\\
+The potential of the use of the Internet of Things Laboratory for learning is mentioned. Some of the projects that were developed by students and masters Petersburg SUT are enumerated.\\
+
+\subsubsection{IoT: Source of test challenges}\cite{Paper4}
 This paper provides seven diferent point of view to analyze the \IoT devices, just like its challenges, solutions and asocciated trade-offs for testing.
 \begin{enumerate}
 	\item There are three traditional architectures supported within the IoT space:
@@ -70,13 +98,23 @@ This paper provides seven diferent point of view to analyze the \IoT devices, ju
 	\item This section talk about testing costs and how to decrease that cost with almost a factor of 100.\\
 \end{enumerate}
 
-\textbf{A Review on Big Data Analysis and Internet of Things}\cite{Paper5}\\
+\subsubsection{Learning Internet-of-Things Security ``Hands-On''}\cite{Paper10}
+The fast productization of IoT technologies is leaving users vulnerable to security and privacy risks.\\
+Este paper habla de las implicaciones de securidad de IoT. Nombra los We didn't attempt to provide wide coverage but rather to highlight some of the most severe, yet easy to abuse, security and privacy threats to simple IoT use cases, namely:
+cambiar
+\begin{itemize}
+	\item Leakage of personally identifiable information (PII): En esta sección habla de que los dispositivos IoT tienen mucha información personal, como puede ser la localización. Dice que se deben identificar los riesgos y asegurar las comunicaciones y la autenticación, por último ocultar la identidad.
+	\item Leakage of sensitive user information: Applications commonly collect redundant data or data not directly relevant to their purpose. There are several possible reasons for this. First, application developers might overestimate the requirements of future, improved application versions. In this case, information might leak to the application vendor and anyone with access to its back end (including malicious users). Second, applications often don't communicate properly with their users regarding the type of sensitive information being collected or don't provide opt-out options. This might happen because the vendor wants to resell the data and so is gathering as much information as possible. In this case, the leaked information isn't limited to the application vendors but is available to any party that might acquire it. Finally, the flow of sensitive information is sometimes the outcome of bad protection practices during data transmission (for example, not using Transport Layer Security). In this case, anyone capable of eavesdropping on the communication might access the information exchanged.
+	\item Unauthorized execution of functions: Today, attackers have many opportunities to infiltrate a network: malware might evade antivirus checks, mobile apps with back doors might allow remote code execution, vulnerable services running on clients might allow buffer overflow attacks, and unnecessarily open ports might welcome unauthenticated malicious entities. Given these risks and modern networks' increasing complexity, it's unrealistic to assume that the exposed clients are reliable and trustworthy. In fact, a compromised client inside the network is often used as a stepping stone for an unauthorized entity outside the network to issue commands that affect the status of local devices. The threat is significant for the IoT ecosystem because IoT devices interact with the physical world and users. Surprisingly, our use case analysis indicates that some IoT products adopt insecure mechanisms by default to provide a more user-friendly plug-and-play product.
+\end{itemize}
+
+\subsubsection{A Review on Big Data Analysis and Internet of Things}\cite{Paper5}
 This paper aims at reviewing the role of big data in IoT through discussion of its protocols and architectural structure. Also its presents methods for testing these protocols and security considerations. Multiple IoT applications and future research directions are also discussed.\\
 Explains the importance of big data in IoT and discusses various challenges associated with its management and communication. Clarifies different mode of communication between IoT for big data processing while overviews its layered structure architecture. Describe different platforms to test designed protocols for managing IoT, discuss the importance of security and privacy of IoT is completed. The possible applications of IoT in different areas is explained, and future research challenges are discussed. \\
 This paper also provides testing tools for new and old protocols, like Net2Plan, EuWIn SensorHUB.
 This is an interesting paper where we can use for differents protocols testings.
 
-\textbf{ARMOUR: Large-scale experiments for IoT security \& trust}\cite{Paper6}\\
+\subsubsection{ARMOUR: Large-scale experiments for IoT security \& trust}\cite{Paper6}
 This paper presents ARMOUR, a research project in which a methodology to experiment, validate and certify different technological solutions in large-scale conditions is defined. Additionally, a set of bootstrapping, group sharing and software programming experiments is proposed, on which different tests will be executed with the purpose to verify their security and trust in IoT scenarios.\\
 The methodology consist of four phases:
 \begin{itemize}
@@ -91,7 +129,7 @@ The methodology consist of four phases:
 This paper defines the experimentation methodology of ARMOUR project in order to test and validate various technologies solutions applied in determined experiments, particularly in bootstrapping, group sharing and software programming experiments, from the security and trust perspective. Thus, these solutions can be used in different application domains, like Remote Healthcare or Smart Cities.
 This methodology would be useful for us in case we need to validate our project.
 
-\textbf{Toward consumer-friendly security in smart environments}\cite{Paper7}\\
+\subsubsection{Toward consumer-friendly security in smart environments}\cite{Paper7}
 This paper presents an implementation of an IoT architectural framework based on Software Defined Networking (SDN). In this architecture, IoT devices attempting to join an IoT network are scanned for vulnerabilities using custom vulnerability scanners and penetration testing tools before being allowed to communicate with any other device. In the case that a vulnerability is detected, the system will try to fix the vulnerability. If the fix fails, then the user will be alerted to the vulnerability and provided with suggestions for fixing it before it will be allowed to join the network.\\
 According to OWASP, the following are some of the most common IoT vulnerabilities. They have developed or are developing scanners that focus on each of these items.
 \begin{itemize}
@@ -103,46 +141,61 @@ According to OWASP, the following are some of the most common IoT vulnerabilitie
 \end{itemize}
 This paper is very similar to our project, because it makes tests for the IoT Devices, find vulnerabilities and also try to fix them.
 
+\newpage
 \subsection{Tabla cronológica}
 
 \begin{center}
 	\begin{adjustbox}{max width = \textwidth}
 		\begin{tabular}{|c|c|c|c|} \hline
 			Fecha 	   & Cita          & Descripción                          & Exclusividad \\ \hline
- 			18-04-2013 & \cite{Paper2} & Propose a code insertion methodology & \\ \hline
-			27-01-2014 & \cite{Paper3} & 
+ 			2013 & \cite{Paper2} & Propose a code insertion methodology & \\ \hline
+			2013 & \cite{Paper3} & 
 				\begin{tabular}{@{}c@{}}
 					Sensor simulator and sensor web standards\\
 					applied to an indoor industrial environment 
 				\end{tabular}
 										   & Emulate some different devices\\ \hline
-			 25-07-2016 & \cite{Paper4} &
+		     2013 & \cite{Paper9} &  & \\ \hline
+			 2014 & \cite{Paper8} & e-Health and IoT how to connect & 
+				 \begin{tabular}{@{}c@{}}
+					Los seguridad a mejorar\\
+					en el desarrollo de dispositivos\\
+					tan cruciales para la salud.
+				 \end{tabular} \\ \hline
+			 2014 & \cite{Paper11} & Testing in IoT & \\ \hline
+		     2015 & \cite{Presentation1} & 
+		     \begin{tabular}{@{}c@{}}
+		     	Pequeña guía para mirar\\
+		     	las vulnerabilidades de los\\
+		     	dispositivos IoT
+		     \end{tabular}
+	      & Los puntos vulnerables de los dispositivo\\ \hline
+			 2016 & \cite{Paper4} &
 			 \begin{tabular}{@{}c@{}}
 			 	Provides seven different point of view\\
 			 	to analyze IoT devices. 
 			 \end{tabular} 
 			 	 & Visión general de un producto IoT\\ \hline
-			 16-01-2017 & \cite{Paper5} & Role of big data in IoT devices &
+		 	 2016 & \cite{Paper12} &  & \\ \hline
+		 	 2016 & \cite{Paper10} & Seguridad en los IoT & Divide en 3 las inseguridades\\ \hline
+			 2017 & \cite{Paper5} & Role of big data in IoT devices &
 			 \begin{tabular}{@{}c@{}} 
 			 	Troubles and solution of \\introduce big data in IoT 
 			 \end{tabular}\\ \hline
-			 09-02-2017 & \cite{Paper6} & How to develop a larg-scale project & Present a new methodology\\ \hline
-			 04-05-2017 & \cite{Paper7} & 
+			 2017 & \cite{Paper6} & How to develop a larg-scale project & Present a new methodology\\ \hline
+			 2017 & \cite{Paper7} & 
 			 \begin{tabular}{@{}c@{}}
 			 	Implementation of an\\
 			 	IoT architectural framework\\
 			 	to test IoT before we use
 			 \end{tabular}  & Important architecture\\ \hline
-			  &  &  & \\ \hline
-			  &  &  & \\ \hline
-			  &  &  & \\ \hline
-			  &  &  & \\ \hline
-			  &  &  & \\ \hline
-			  &  &  & \\ \hline
 		\end{tabular}
 	\end{adjustbox}
 \end{center}
 
+\subsection{Conclusiones}
+Los dispositivos IoT tienen fallas de seguridad graves, porque la mayoría busca la funcionalidad y no se han percatado o querido tener en cuenta las medidas necesarias para que la información valiosa de los nuevos dispositivos esté segura. Muchos papers proponen diferentes medidas para desarrollar productos. Pero deben ser las empresas que realizan estas tareas las que deben seguirlos. Uno de los papers aquí expuestos, propone un método para realizarlo una vez el dispositivo esté en el mercado, pudiendo evitar conectarlo si no pasa las pruebas. Creo que este último paper es de suma importancia, porque no solo podemos utilizarlo nosotros como bien dice, sino routers companies para que venga integrado en el proceso de conexión que tenemos en casa. También podrá ser útil para las diferentes empresas que usan dispositivos IoT como herramientas de trabajo.\\
+Otros de los papers expuestos hablan de testing, y de las diferentes formas que han usado para realizar sus pruebas. De los cuales podemos aprender técnicas y realizar los mismos en nuestro trabajo fin de máster.
 
 %Explica que como los dipositivos \IoT necesitan muchas conexiones cortas, Un algoritmo como LWC provee la seguridad deseada ya que una nueva clave será generada por sesión, así, el atacante no tendrá suficiente tiempo para romper la clave. La clave es generada por los tweets de miles de personas, lo que hace que sea imposible descifrar la aleatoriedad. Dicen que proporciona un nivel de seguridad bastante elevado y que el overhead es desdeñable.
 %Pratham Majumder, Koushik Sinha, \href{http://ieeexplore.ieee.org/document/7917638/authors}{A novel key generation algorithm from twitter data stream for secure communication in \IoT} (13-17 de Marzo de 2017) 4 mayo de 2017
@@ -165,3 +218,6 @@ This paper is very similar to our project, because it makes tests for the IoT De
 %for Internet of Things based Services: A Semantic Approach. In: The Fourth International
 %Conference on Advances in System Testing and Validation Lifecycle (VALID 2012),
 %pp. 21–27 (2012)
+%De Nicola, R., & Hennessy, M. C. (1984). Testing equivalences for processes. Theoretical computer science, 34(1-2), 83-133.
+%
+%Boyd, J. H., & Runkle, D. E. (1993). Size and performance of banking firms: Testing the predictions of theory. Journal of monetary economics, 31(1), 47-67.
